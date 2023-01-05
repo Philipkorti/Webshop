@@ -22,11 +22,7 @@
         }
     }
     if(isset($posts)){
-      if(count($posts) > 3){
-        $count = 3;
-      }else{
-        $count = count($posts);
-      }
+     
       $rand_keys = array_rand( $posts, $count);
     }
     if(isset($rand_keys)){
