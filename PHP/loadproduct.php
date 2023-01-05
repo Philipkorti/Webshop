@@ -22,7 +22,7 @@
         }
     }
     if(isset($posts)){
-      $rand_keys = array_rand( $posts, $test);
+      $rand_keys = array_rand( $posts, 3);
     }
     if(isset($rand_keys)){
       for($i = 0; $i < count($rand_keys); $i++){
