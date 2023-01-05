@@ -22,7 +22,6 @@
         }
     }
     if(isset($posts)){
-      $test = count($posts);
       $rand_keys = array_rand( $posts, $test);
     }
     if(isset($rand_keys)){
