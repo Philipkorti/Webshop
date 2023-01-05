@@ -21,12 +21,14 @@
             $posts[] = $data;
         }
     }
-    if(count($posts) > 3){
-      $count = 3;
-    }else{
-      $count = count($posts);
+    if(isset($posts)){
+      if(count($posts) > 3){
+        $count = 3;
+      }else{
+        $count = count($posts);
+      }
+      $rand_keys = array_rand( $posts, $count);
     }
-    $rand_keys = array_rand( $posts, $count);
     if(isset($rand_keys)){
       for($i = 0; $i < count($rand_keys); $i++){
         echo " <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='$i' class='active' aria-current='true' aria-label='Slide $i'></button>";
