@@ -22,8 +22,7 @@
         }
     }
     if(isset($posts)){
-     
-      $rand_keys = array_rand( $posts, $count);
+      $rand_keys = array_rand( $posts, 3);
     }
     if(isset($rand_keys)){
       for($i = 0; $i < count($rand_keys); $i++){
@@ -37,7 +36,7 @@
     <div class='carousel-item active'>";
       echo "<a role='button' onclick='show(".$posts[$rand_keys[0]]->id.")'><img src='".$posts[$rand_keys[0]]->mainPicture."' class='d-block w-50' alt='...'></a>
     </div>";
-      for($i = 1; $i < $count; $i++){
+      for($i = 1; $i < 3; $i++){
         echo "<div class='carousel-item'>
         <a role='button' onclick='show(".$posts[$rand_keys[$i]]->id.")'><img src='".$posts[$rand_keys[$i]]->mainPicture."' class='d-block w-100' alt='...'></a>
       </div>";
