@@ -27,9 +27,10 @@
       $count = count($posts);
     }
     $rand_keys = array_rand( $posts, $count);
-
-    for($i = 0; $i < count($rand_keys); $i++){
-      echo " <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='$i' class='active' aria-current='true' aria-label='Slide $i'></button>";
+    if(isset($rand_keys)){
+      for($i = 0; $i < count($rand_keys); $i++){
+        echo " <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='$i' class='active' aria-current='true' aria-label='Slide $i'></button>";
+      }
     }
     echo "</div>";
     echo "<div class='carousel-inner'>";
@@ -37,10 +38,12 @@
     <div class='carousel-item active'>";
       echo "<a role='button' onclick='show(".$posts[$rand_keys[0]]->id.")'><img src='".$posts[$rand_keys[0]]->mainPicture."' class='d-block w-50' alt='...'></a>
     </div>";
-    for($i = 1; $i < count($rand_keys); $i++){
-      echo "<div class='carousel-item'>
-      <a role='button' onclick='show(".$posts[$rand_keys[$i]]->id.")'><img src='".$posts[$rand_keys[$i]]->mainPicture."' class='d-block w-100' alt='...'></a>
-    </div>";
+    if(isset($rand_keys)){
+      for($i = 1; $i < count($rand_keys); $i++){
+        echo "<div class='carousel-item'>
+        <a role='button' onclick='show(".$posts[$rand_keys[$i]]->id.")'><img src='".$posts[$rand_keys[$i]]->mainPicture."' class='d-block w-100' alt='...'></a>
+      </div>";
+      }
     }
     ?>
   </div>
@@ -65,7 +68,8 @@
       }
     }
     echo "";
-    foreach ($posts as $post) {
+    if(isset($posts)){
+      foreach ($posts as $post) {
         echo "
         <div class='col-lg-4 col-md-3' style='margin-top: 10px'>
             <div class='card'>";
@@ -78,6 +82,7 @@
             </div>
         </div>";
     }
+  }
         ?>
     </div>
 
