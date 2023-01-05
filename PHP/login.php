@@ -17,7 +17,7 @@
                                 </label>
                             </div>
                             <div class="card-footer text-center">
-                                <button onclick="admin()" class="btn btn-warning">Abschiken</button>
+                                <button onclick="admin()" class="btn btn-warning">Login</button>
                             </div>
                         </form>
                     </div>
