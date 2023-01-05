@@ -47,8 +47,10 @@ if ( isset($_FILES['photos']['name']) ) {
 			foreach($kats as $ket){
 				if($ket == $katogorien){
 					$check = false;
+					echo "true";
 				}
 			}
+			echo $check;
 			if($check == 1){
 				$sql = "INSERT INTO Katogorien(Katogorien) VALUES ('$katogorien')";
 				$mysqli->query($sql);
