@@ -60,7 +60,6 @@
             $posts[] = $data;
         }
     }
-    $mysqli = new mysqli("db", "root", "example", "WebShop");
     $sql = "SELECT * FROM Bilder";
     if ($result = $mysqli->query($sql)) {
       while ($data = $result->fetch_object()) {
@@ -68,7 +67,8 @@
       }
     }
     $kat = $_GET['q'];
-    foreach ($posts as $post) {
+    if(isset($posts)){
+      foreach ($posts as $post) {
         if($post->category == $kat) {
             echo "
             <div class='col-lg-4 col-md-3' style='margin-top: 10px'>
@@ -81,8 +81,8 @@
                     </div>
                 </div>
             </div>";
-        }
-       
+        }  
+    }
     }
         ?>
   </div>

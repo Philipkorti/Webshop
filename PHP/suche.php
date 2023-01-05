@@ -22,28 +22,29 @@ if ($result = $mysqli->query($sql)) {
      $posts[] = $data;
  }
 }
-$mysqli = new mysqli("db", "root", "example", "WebShop");
 $sql = "SELECT * FROM Bilder";
 if ($result = $mysqli->query($sql)) {
 while ($data = $result->fetch_object()) {
  $bilder[] = $data;
 }
 }
-foreach ($posts as $post) {
-    if(startsWith(strtolower($post->Name), $q)) {
-        echo "
-        <div class='col-lg-4 col-md-3' style='margin-top: 10px'>
-            <div class='card'>";
-                    echo "<a  onclick='show(".$post->id.")' role='button'><img class='mx-auto d-block w-100' src='$post->mainPicture'/></a>";
-                echo"
-                <div class='card-text'>
-                <h4><a onclick='show(".$post->id.")' role='button'>".$post->Name."</a></h4>
-                <p>Preis: ".$post->price."€</p>
+if(isset($posts)){
+    foreach ($posts as $post) {
+        if(startsWith(strtolower($post->Name), $q)) {
+            echo "
+            <div class='col-lg-4 col-md-3' style='margin-top: 10px'>
+                <div class='card'>";
+                        echo "<a  onclick='show(".$post->id.")' role='button'><img class='mx-auto d-block w-100' src='$post->mainPicture'/></a>";
+                    echo"
+                    <div class='card-text'>
+                    <h4><a onclick='show(".$post->id.")' role='button'>".$post->Name."</a></h4>
+                    <p>Preis: ".$post->price."€</p>
+                    </div>
                 </div>
-            </div>
-        </div>";
+            </div>";
+        }
+       
     }
-   
 }
 function startsWith( $haystack, $needle ) {
     $length = strlen( $needle );

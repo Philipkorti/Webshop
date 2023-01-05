@@ -63,7 +63,6 @@
   </div>
     <div class="row">
         <?php
-    $mysqli = new mysqli("db", "root", "example", "WebShop");
     $sql = "SELECT * FROM Bilder";
     if ($result = $mysqli->query($sql)) {
       while ($data = $result->fetch_object()) {
