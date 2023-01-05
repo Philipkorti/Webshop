@@ -129,7 +129,6 @@ formData.append('photos[]', file, file.name);
 }
 alert("Katze");
 // XMLHttpRequest aufstellen
-var xhr = new XMLHttpRequest();
 // Verbindung zur Anwendung aufbauen
 alert("let");
 let title = document.getElementById('title').value;
@@ -138,6 +137,7 @@ let beschreibung = document.getElementById('beschreibung').value;
 let katogorien = document.getElementById('katogorien').value;
 alert(title);
 alert(katogorien);
+var xhr = new XMLHttpRequest();
 xhr.open('POST', './upload.php?title='+title+"&price="+price+"&beschreibung="+beschreibung + "&katogorien="+katogorien, true);
 // Platzhalter für den Ladefortschritt
 // Event Handler für die Response vom Server
