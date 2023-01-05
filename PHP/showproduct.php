@@ -37,24 +37,29 @@ echo "<div id='carouselExampleCaptions' class='carousel slide' data-bs-ride='fal
 <div class='carousel-indicators'>
     <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'><img src=".$post->mainPicture." class='d-block w-100' alt='...'></button>";
     $picturecount = 0;
-    foreach($bilder as $bild){
-      if($bild->parent == $post->id){
-        $picturecount++;
-        echo " <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='$picturecount' aria-label='Slide 2'><img src=".$bild->URL." class='d-block w-100' alt='...'></button>";
-      }
+    if(isset($bilder)){
+      foreach($bilder as $bild){
+        if($bild->parent == $post->id){
+          $picturecount++;
+          echo " <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='$picturecount' aria-label='Slide 2'><img src=".$bild->URL." class='d-block w-100' alt='...'></button>";
+        }
+    }
     }
   echo "</div>
   <div class='carousel-inner'>
     <div class='carousel-item active'>
       <img src=".$post->mainPicture." class='d-block w-100' alt='...'>
     </div>";
-    foreach($bilder as $bild){
-      if($bild->parent == $post->id){
-        echo  "<div class='carousel-item'>
-      <img src=".$bild->URL." class='d-block w-100' alt='...'>
-    </div>";
+    if(isset($bilder)){
+      foreach($bilder as $bild){
+        if($bild->parent == $post->id){
+          echo  "<div class='carousel-item'>
+        <img src=".$bild->URL." class='d-block w-100' alt='...'>
+      </div>";
+        }
       }
     }
+    
   echo "</div>
 </div>";
 echo "</div>";
