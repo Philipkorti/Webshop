@@ -11,7 +11,7 @@ if ( isset($_FILES['photos']['name']) ) {
 	$total_files = count($_FILES['photos']['name']);
 
 	for($key = 0; $key < $total_files; $key++) {
-
+		echo $_FILES['photos']['name'][$key];
 		// Check if file is selected
 		if (isset($_FILES['photos']['name'][$key]) 
                       && $_FILES['photos']['size'][$key] > 0) {
@@ -33,6 +33,7 @@ if ( isset($_FILES['photos']['name']) ) {
 			$original_filename = $_FILES['photos']['name'][$key];
 			$target = $target_dir . basename($original_filename);
 			$tmp  = $_FILES['photos']['tmp_name'][$key];
+			echo $target;
 			move_uploaded_file($tmp, $target);
 			$check = true;
          $mysqli = new mysqli("db", "root", "example", "WebShop");
