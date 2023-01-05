@@ -7,19 +7,23 @@
   }
 }
 $q = $_GET['q'];
-if($q == 1){
-  foreach($posts as $post) {
-    echo "<a type='button' onclick='loadproductkat(\"".$post->Katogorien."\")'>".$post->Katogorien."</a><br/>";
-  }
-}else{
-  echo "<label for='Katogorien' class='form-label'>Katogorien</label>
-    <input class='form-control' id='katogorien' list='KatogorienOptions' placeholder='Type to search Katogorien'>
-    <datalist id='KatogorienOptions'>";
-  foreach($posts as $post){
-    echo "<option value=".$post->Katogorien.">";
-  }
-  echo "</datalist>";
+if(isset($posts)){
+  if($q == 1){
+  
+    foreach($posts as $post) {
+      echo "<a type='button' onclick='loadproductkat(\"".$post->Katogorien."\")'>".$post->Katogorien."</a><br/>";
+    }
+  }else{
+    echo "<label for='Katogorien' class='form-label'>Katogorien</label>
+      <input class='form-control' id='katogorien' list='KatogorienOptions' placeholder='Type to search Katogorien'>
+      <datalist id='KatogorienOptions'>";
+    foreach($posts as $post){
+      echo "<option value=".$post->Katogorien.">";
+    }
 }
+}
+
+  echo "</datalist>";
 
 
     
