@@ -70,6 +70,9 @@
             <div id="outputkat">
             </div>
             <div class="input-group mb-3 mt-3">
+              <input type="number" class="form-control" placeholder="Stück" id="stueck" aria-label="Title" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3 mt-3">
               <span class="input-group-text">Beschreibung</span>
               <textarea class="form-control" id="beschreibung" aria-label="With textarea"></textarea>
             </div>
@@ -135,9 +138,10 @@ let title = document.getElementById('title').value;
 let price = document.getElementById('price').value;
 let beschreibung = document.getElementById('beschreibung').value;
 let katogorien = document.getElementById('katogorien').value;
+let stueck = document.getElementById('stueck').value;
 alert(title);
 alert(katogorien);
-xhr.open('POST', './upload.php?title='+title+"&price="+price+"&beschreibung="+beschreibung + "&katogorien="+katogorien, true);
+xhr.open('POST', './upload.php?title='+title+"&price="+price+"&beschreibung="+beschreibung + "&katogorien="+katogorien+"&stueck="+stueck, true);
 // Platzhalter für den Ladefortschritt
 // Event Handler für die Response vom Server
 xhr.onload = function () {

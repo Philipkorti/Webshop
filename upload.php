@@ -7,6 +7,7 @@ $title = $_GET['title'];
 $price = $_GET['price'];
 $katogorien = $_GET['katogorien'];
 $beschreibung = $_GET['beschreibung'];
+$stueck = $_GET['stueck'];
 if ( isset($_FILES['photos']['name']) ) {
 	$total_files = count($_FILES['photos']['name']);
 
@@ -21,8 +22,8 @@ if ( isset($_FILES['photos']['name']) ) {
 			}
 			
 			// Check filesize
-			if($_FILES['photos']['size'][$key] > 500000){
-				echo'Dateigröße überschreitet Max 500KB.';
+			if($_FILES['photos']['size'][$key] > 600000){
+				echo'Dateigröße überschreitet Max 600KB.';
 			}
 			
 			// Check ob der Dateiname bereits existiert
@@ -54,7 +55,7 @@ if ( isset($_FILES['photos']['name']) ) {
 				$mysqli->query($sql);
 			}
 
-            $sql = "INSERT INTO Produkte(Name, price, inStock, description, evaluation, countevaluation, category, mainPicture) VALUES ('$title', $price, 1, '$beschreibung', 0, 0, '$katogorien', '$target')";
+            $sql = "INSERT INTO Produkte(Name, price, inStock, description, evaluation, countevaluation, category, mainPicture) VALUES ('$title', $price, $stueck, '$beschreibung', 0, 0, '$katogorien', '$target')";
             $mysqli->query($sql);
          }else{
 			$sql = "SELECT * FROM Produkte ORDER BY id DESC Limit 1";
