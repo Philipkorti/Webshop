@@ -34,7 +34,7 @@
     echo "<div class='carousel-inner'>";
     echo "<div class='carousel-inner'>
     <div class='carousel-item active'>";
-      echo "<a role='button' onclick='show(".$posts[$rand_keys[0]]->id.")'><img src='".$posts[$rand_keys[0]]->mainPicture."' class='d-block w-50' alt='...'></a>
+      echo "<a role='button' onclick='show(".$posts[$rand_keys[0]]->id.")'><img src='".$posts[$rand_keys[0]]->mainPicture."' class='d-block w-100' alt='...'></a>
     </div>";
       for($i = 1; $i < 3; $i++){
         echo "<div class='carousel-item'>
