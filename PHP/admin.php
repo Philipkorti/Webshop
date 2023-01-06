@@ -10,7 +10,7 @@ if ($result = $mysqli->query($sql)) {
       $users[] = $datab;
   }
 }
-
+$check = true;
 foreach($users as $user) {
     if($user->UserName == $username){
         if($user->password == $password){
@@ -18,7 +18,12 @@ foreach($users as $user) {
             if($angemeldet){
                 setcookie('user', $_SESSION['userid'], time() + (86400*30), '/');
             }
+            echo "Angemeldet";
+            $check = false;
         }
     }
+}
+if($check == 1){
+    echo "User oder Passwort ist falsch";
 }
 ?>

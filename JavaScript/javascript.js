@@ -69,11 +69,14 @@ window.onload = () => {
         var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function(){
                     if(this.readyState ==4 && this.status==200){
-                        document.getElementById("output").innerHTML =this.responseText;
-                        user();
-                        loadproduct()
+                        document.getElementById("error").innerHTML =this.responseText;
+                        txt = document.getElementById("error").innerText;
+                        if(txt == "Angemeldet"){
+                            user();
+                            loadproduct();
+                        }
                     }else{ 
-                        document.getElementById("output").innerHTML =this.statusText;
+                        document.getElementById("error").innerHTML =this.statusText;
                     }
                 };
                 xmlhttp.open("GET","PHP/admin.php?username="+ username + "&password="+ password + "&angemeldet="+check,true);

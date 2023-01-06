@@ -16,8 +16,9 @@
                                     Angemeldet bleiben
                                 </label>
                             </div>
+                            <div id="error" class="text-danger ms-2"></div>
                             <div class="card-footer text-center">
-                                <button onclick="admin()" class="btn btn-warning">Login</button>
+                                <a role="button" onclick="admin()" class="btn btn-warning">Login</a>
                             </div>
                         </form>
                     </div>
