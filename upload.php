@@ -34,7 +34,6 @@ if ( isset($_FILES['photos']['name']) ) {
 			$original_filename = $_FILES['photos']['name'][$key];
 			$target = $target_dir . basename($original_filename);
 			$tmp  = $_FILES['photos']['tmp_name'][$key];
-			echo $target;
 			move_uploaded_file($tmp, $target);
 			$check = true;
          $mysqli = new mysqli("db", "root", "example", "WebShop");

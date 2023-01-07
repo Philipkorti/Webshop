@@ -282,3 +282,37 @@ window.onload = () => {
                 xmlhttp.open("GET","PHP/Logout.php",true);
                 xmlhttp.send();
       }
+      function signIn(){
+        var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if(this.readyState ==4 && this.status==200){
+                        document.getElementById("output").innerHTML =this.responseText;
+                    }else{ 
+                        document.getElementById("output").innerHTML =this.statusText;
+                    }
+                };
+                xmlhttp.open("POST","PHP/signIn.php",true);
+                xmlhttp.send();
+      }
+      function signInnew(){
+        firstname = document.getElementById("firstname").value;
+        lastname = document.getElementById("lastname").value;
+        email = document.getElementById("email").value;
+        password = document.getElementById("password").value;
+        address = document.getElementById("address").value;
+        address2 = document.getElementById("address2").value;
+        city = document.getElementById("city").value;
+        state = document.getElementById("state").value;
+        plz = document.getElementById("plz").value;
+        alert(state);
+        var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if(this.readyState ==4 && this.status==200){
+                        document.getElementById("output").innerHTML =this.responseText;
+                    }else{ 
+                        document.getElementById("output").innerHTML =this.statusText;
+                    }
+                };
+                xmlhttp.open("POST","PHP/newsignIn.php?fname="+firstname+"&lname="+lastname+"&email="+email+"&pass="+password+"&address="+address+"&address2="+address2+"&city="+city+"&state="+state+"&plz="+plz,true);
+                xmlhttp.send();
+      }

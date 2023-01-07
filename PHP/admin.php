@@ -12,8 +12,8 @@ if ($result = $mysqli->query($sql)) {
 }
 $check = true;
 foreach($users as $user) {
-    if($user->UserName == $username){
-        if($user->password == $password){
+    if($user->Email == $username){
+        if(password_verify($password, $user->Password)){
             $_SESSION['userid'] = $user->id;
             if($angemeldet){
                 setcookie('user', $_SESSION['userid'], time() + (86400*30), '/');
