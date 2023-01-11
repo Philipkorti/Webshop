@@ -77,7 +77,7 @@ echo "<div class='row'>";
 echo "<div class='col-lg-6' style='margin-top:20px'>";
 $star = $post->evaluation;
 $test = 'date';
-echo "<a class='btn' onclick='comment(1, $id)'>";
+echo "<a class='btn' onclick='comment(1, $id, 0)'>";
 for ($i=0; $i < 5; $i++) { 
   if($star >= 0.5 && $star <1){
     echo "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-star-half' viewBox='0 0 16 16'>

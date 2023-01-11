@@ -218,7 +218,7 @@ window.onload = () => {
                   xmlhttp.open("GET","PHP/newProduct.php",true);
                   xmlhttp.send();
       }
-      function comment(sort, id){
+      function comment(sort, id, value){
         var xmlhttp = new XMLHttpRequest();
                   xmlhttp.onreadystatechange = function(){
                       if(this.readyState ==4 && this.status==200){
@@ -227,7 +227,7 @@ window.onload = () => {
                           document.getElementById("commentoutput").innerHTML =this.statusText;
                       }
                   };
-                  xmlhttp.open("GET","PHP/comment.php?sort="+sort + "&id="+id,true);
+                  xmlhttp.open("GET","PHP/comment.php?sort="+sort + "&id="+id+"&value="+value,true);
                   xmlhttp.send();
       }
 
