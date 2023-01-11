@@ -123,7 +123,6 @@ if(isset($procom)){
       }
      
 }
-echo count($procom)/5;
 echo "<nav aria-label='Page navigation example'>
 <ul class='pagination justify-content-center'>";
 for ($i=0; $i < count($procom) / 5; $i++) {
