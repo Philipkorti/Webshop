@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row justify-content-center">
     <h2 class="text-center mt-5">Regestrieren</h2>
-    <form class="mt-4">
+    <form class="mt-4" id="newuser" onsubmit="signInnew()" method="GET">
         <div class="row">
             <div class='col-lg-6'>
                 <label class="control-label" for="firstname">Vorname*</label>
@@ -48,8 +48,8 @@
                 <input type="text" class="form-control" id="plz">
             </div>
         </div>
-        <a role="button" class="btn btn-success col-lg-12 mt-3" onclick="signInnew()">SignIn</a>
-        
+        <button type="submit" class="btn btn-success col-lg-12 mt-3">SignIn</a>
+        <script src="./JavaScript/javascript.js"></script>
     </form>
 </div>
 </div>

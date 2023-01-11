@@ -99,7 +99,7 @@ window.onload = () => {
         var title = document.getElementById("title").value;
         var user = document.getElementById("user").value;
         var text = document.getElementById("Comment").value;
-        var star = document.getElementsByName('bewertung');
+        var star = document.getElementsByName('numrating');
 
         for(i = 0; i < star.length; i++){
           if(star[i].checked){
@@ -304,7 +304,6 @@ window.onload = () => {
         city = document.getElementById("city").value;
         state = document.getElementById("state").value;
         plz = document.getElementById("plz").value;
-        alert(state);
         var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function(){
                     if(this.readyState ==4 && this.status==200){
