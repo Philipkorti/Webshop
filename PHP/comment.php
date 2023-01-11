@@ -58,23 +58,28 @@ echo "
 </li>
 </ul>
 ";
-
-$procom = array();
+if(isset($rezes)){#
+  $procom = array();
 foreach($rezes as $rez){
   if($rez->parent == $id){
     array_push($procom, $rez);
   }
 }
+}
+
 $start = 5 * $value;
 if($value == 0){
   $end = 5;
+  if($end > count($procom)){
+    $end =  count($procom);
+  }
 }else{
   $end = 5 * ($value+1);
   if($end > count($procom)){
     $end =  count($procom);
   }
 }
-if(isset($rezes)){
+if(isset($procom)){
   for($i = $start; $i < $end; $i++){
       echo "<h3>".$procom[$i]->title."</h3>";
       for($y = 0; $y < 5; $y++){
