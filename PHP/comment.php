@@ -58,7 +58,7 @@ echo "
 </li>
 </ul>
 ";
-if(isset($rezes)){#
+if(isset($rezes)){
   $procom = array();
 foreach($rezes as $rez){
   if($rez->parent == $id){
@@ -132,9 +132,6 @@ for ($i=0; $i < count($procom) / 5; $i++) {
   }else{
     echo "<li class='page-item'><a class='page-link' href='#' onclick='comment(1, $id, $i)'>".$count."</a></li>";
   }
-    
- 
- 
 }
 echo "</ul>
 </nav>";
