@@ -97,9 +97,9 @@
 for ($i=0; $i < count($posts) / 9; $i++) {
   $count = $i +1;
   if($i == $value){
-    echo "<li class='page-item'><a class='page-link active' href='#' onclick='loadproduct($i)'>".$count."</a></li>";
+    echo "<li class='page-item'><a class='page-link active mt-3' href='#' onclick='loadproduct($i)'>".$count."</a></li>";
   }else{
-    echo "<li class='page-item'><a class='page-link' href='#' onclick='loadproduct($i)'>".$count."</a></li>";
+    echo "<li class='page-item'><a class='page-link mt-3' href='#' onclick='loadproduct($i)'>".$count."</a></li>";
   }
 }
 echo "</ul>
