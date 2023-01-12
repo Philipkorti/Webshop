@@ -14,6 +14,7 @@
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
   <div class="carousel-indicators">
     <?php
+    $value = $_GET['str'];
     $mysqli = new mysqli("db", "root", "example", "WebShop");
     $sql = "SELECT * FROM Produkte";
        if ($result = $mysqli->query($sql)) {
@@ -63,22 +64,46 @@
         $bilder[] = $data;
       }
     }
-    echo "";
     if(isset($posts)){
-      foreach ($posts as $post) {
+      $start = 9 * $value;
+        if($value == 0){
+          $end = 9;
+          if($end > count($posts)){
+            $end =  count($posts);
+          }
+        }else{
+          $end = 9 * ($value+1);
+          if($end > count($posts)){
+            $end =  count($posts);
+          }
+        }
+          for($i = $start; $i < $end; $i++){
         echo "
         <div class='col-lg-4 col-md-3' style='margin-top: 10px'>
             <div class='card'>";
-                    echo "<a  onclick='show(".$post->id.")' role='button'><img class='mx-auto d-block w-100' src='$post->mainPicture'/></a>";
+                    echo "<a  onclick='show(".$posts[$i]->id.")' role='button'><img class='mx-auto d-block w-100' src='".$posts[$i]->mainPicture."'/></a>";
                 echo"
                 <div class='card-text'>
-                <h4><a onclick='show(".$post->id.")' role='button'>".$post->Name."</a></h4>
-                <p>Preis: ".$post->price."€</p>
+                <h4><a onclick='show(".$posts[$i]->id.")' role='button'>".$posts[$i]->Name."</a></h4>
+                <p>Preis: ".$posts[$i]->price."€</p>
                 </div>
             </div>
         </div>";
+
     }
   }
+  echo "<nav aria-label='Page navigation example'>
+<ul class='pagination justify-content-center'>";
+for ($i=0; $i < count($posts) / 9; $i++) {
+  $count = $i +1;
+  if($i == $value){
+    echo "<li class='page-item'><a class='page-link active' href='#' onclick='loadproduct($i)'>".$count."</a></li>";
+  }else{
+    echo "<li class='page-item'><a class='page-link' href='#' onclick='loadproduct($i)'>".$count."</a></li>";
+  }
+}
+echo "</ul>
+</nav>";
         ?>
     </div>
 

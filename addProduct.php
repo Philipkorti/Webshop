@@ -81,22 +81,17 @@ let file = files[i];
 if (!file.type.match('image.*')) {
     continue;
 }
-alert("Hund");
 // Datei in den Request setzen
 formData.append('photos[]', file, file.name);
 }
-alert("Katze");
 // XMLHttpRequest aufstellen
 var xhr = new XMLHttpRequest();
 // Verbindung zur Anwendung aufbauen
-alert("let");
 let title = document.getElementById('title').value;
 let price = document.getElementById('price').value;
 let beschreibung = document.getElementById('beschreibung').value;
 let katogorien = document.getElementById('katogorien').value;
 let stueck = document.getElementById('stueck').value;
-alert(title);
-alert(katogorien);
 xhr.open('POST', './upload.php?title='+title+"&price="+price+"&beschreibung="+beschreibung + "&katogorien="+katogorien+"&stueck="+stueck, true);
 // Platzhalter für den Ladefortschritt
 // Event Handler für die Response vom Server

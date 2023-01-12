@@ -1,7 +1,7 @@
 window.onload = () => {
 }
 
-      function loadproduct(){
+      function loadproduct(str){
         var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function(){
                     if(this.readyState ==4 && this.status==200){
@@ -10,7 +10,7 @@ window.onload = () => {
                         document.getElementById("output").innerHTML =this.statusText;
                     }
                 };
-                xmlhttp.open("GET","PHP/loadproduct.php",true);
+                xmlhttp.open("GET","PHP/loadproduct.php?str="+str,true);
                 xmlhttp.send();
       }
       function loadkatogorien(str){
@@ -314,4 +314,16 @@ window.onload = () => {
                 };
                 xmlhttp.open("POST","PHP/newsignIn.php?fname="+firstname+"&lname="+lastname+"&email="+email+"&pass="+password+"&address="+address+"&address2="+address2+"&city="+city+"&state="+state+"&plz="+plz,true);
                 xmlhttp.send();
+      }
+      function ADS(){
+        var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.onreadystatechange = function(){
+                      if(this.readyState ==4 && this.status==200){
+                          document.getElementById("outputads").innerHTML = this.responseText;
+                      }else{ 
+                          document.getElementById("outputads").innerHTML =this.statusText;
+                      }
+                  };
+                  xmlhttp.open("GET","PHP/ads.php",true);
+                  xmlhttp.send();
       }

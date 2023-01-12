@@ -59,7 +59,10 @@
 <body>
   <div class="container-fluid">
     <div id="output">
-    
+      
+    </div>
+    <div id="outputads">
+
     </div>
     <div>
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -81,11 +84,13 @@
     <script defer src="./Cooki/cookieconsent.js"></script>
     <script defer src="./Cooki/cookieconsent-init.js"></script>
     <script>
-      loadproduct();
+      loadproduct(0);
       loadkatogorien(1);
       user();
     </script>
-
+     <script type="text/plain" data-cookiecategory='targeting'>
+       ADS();
+      </script>
   </div>
 </body>
 </html>

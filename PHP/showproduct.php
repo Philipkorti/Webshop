@@ -2,6 +2,7 @@
 session_start();
 $picturecount = 0;
 $id = $_GET['q'];
+setcookie($id, $id, time() + (86400*30), '/');
  $mysqli = new mysqli("db", "root", "example", "WebShop");
  $sql = 'SELECT * FROM Produkte';
  if ($result = $mysqli->query($sql)) {
@@ -76,7 +77,6 @@ Anzahl: <input type='number' id='stueck' min='1' max=".$post->inStock." value='1
 echo "<div class='row'>";
 echo "<div class='col-lg-6' style='margin-top:20px'>";
 $star = $post->evaluation;
-$test = 'date';
 echo "<a class='btn' onclick='comment(1, $id, 0)'>";
 for ($i=0; $i < 5; $i++) { 
   if($star >= 0.5 && $star <1){
@@ -106,7 +106,8 @@ echo"</div>";
 echo "<div class='col-lg-6' style='margin-top:20px'>";
 echo "<button class='btn btn-warning' onclick='loadnewevaluation(".$id.")' >Schreib eine Bewertung</button>";
 echo "<div id='form'></div>";
-echo "</div>";
-echo "</div>";
-echo "</html>"
-?>
+echo "</div>
+</div>
+ </div>";
+ ?>
+
