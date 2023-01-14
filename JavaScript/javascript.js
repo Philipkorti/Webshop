@@ -1,17 +1,20 @@
 window.onload = () => {
 }
 
-      function loadproduct(str){
-        var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function(){
-                    if(this.readyState ==4 && this.status==200){
-                        document.getElementById("output").innerHTML =this.responseText;
-                    }else{ 
-                        document.getElementById("output").innerHTML =this.statusText;
-                    }
-                };
-                xmlhttp.open("GET","PHP/loadproduct.php?str="+str,true);
-                xmlhttp.send();
+      function loadproduct(str,max, q){
+        if(str >= 0 && str < max){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if(this.readyState ==4 && this.status==200){
+                    document.getElementById("output").innerHTML =this.responseText;
+                }else{ 
+                    document.getElementById("output").innerHTML =this.statusText;
+                }
+            };
+            xmlhttp.open("GET","PHP/loadproduct.php?str="+str+"&q="+q,true);
+            xmlhttp.send();  
+        }
+        
       }
       function loadkatogorien(str){
         var xmlhttp = new XMLHttpRequest();

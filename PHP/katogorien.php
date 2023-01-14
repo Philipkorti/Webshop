@@ -11,7 +11,7 @@ $q = $_GET['q'];
   if($q == 1){
     if(isset($posts)){
     foreach($posts as $post) {
-      echo "<a type='button' onclick='loadproductkat(\"".$post->Katogorien."\")'>".$post->Katogorien."</a><br/>";
+      echo "<a type='button' onclick='loadproduct(0,2,\"".$post->Katogorien."\")'>".$post->Katogorien."</a><br/>";
     }
   }
   }else{

@@ -16,7 +16,7 @@
     
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #91E0FF;" id="navbar-backgroundid" aria-label="Third navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand text-black" href="#" onclick="loadproduct()">Juwelier Huemer</a>
+          <a class="navbar-brand text-black" href="#" onclick="loadproduct(0,2)">Juwelier Huemer</a>
           <div class="col-6 ms-2">
             <form role="search" class="d-flex">
               <input class="form-control" type="search" onsearch="showHint(this.value)" onkeyup="showHint(this.value)" placeholder="Search">
@@ -84,7 +84,7 @@
     <script defer src="./Cooki/cookieconsent.js"></script>
     <script defer src="./Cooki/cookieconsent-init.js"></script>
     <script>
-      loadproduct(0);
+      loadproduct(0,2);
       loadkatogorien(1);
       user();
     </script>
