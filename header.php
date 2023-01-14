@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     <title>Document</title>
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: lightblue" id="navbar-backgroundid" aria-label="Third navbar example">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #91E0FF;" id="navbar-backgroundid" aria-label="Third navbar example">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Juwelier Huemer</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="true" aria-label="Toggle navigation">

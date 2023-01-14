@@ -31,6 +31,6 @@ foreach($posts as $post) {
     </tr>";
 }
 echo"</table>
-<a href='./addProduct.php'>Neues Produkt</a>
+<a href='./addProduct.php' class='btn btn-success col-lg-12'>Neues Produkt</a>
 </div>"
 ?>

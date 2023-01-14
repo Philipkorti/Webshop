@@ -19,7 +19,7 @@
           <a class="navbar-brand text-black" href="#" onclick="loadproduct(0,2)">Juwelier Huemer</a>
           <div class="col-6 ms-2">
             <form role="search" class="d-flex">
-              <input class="form-control" type="search" onsearch="showHint(this.value)" onkeyup="showHint(this.value)" placeholder="Search">
+              <input class="form-control" type="search" onsearch="showHint(this.value)" onkeyup="loadproduct(0,2,'undefined',this.value)" placeholder="Search">
             </form>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="true" aria-label="Toggle navigation">
@@ -84,7 +84,7 @@
     <script defer src="./Cooki/cookieconsent.js"></script>
     <script defer src="./Cooki/cookieconsent-init.js"></script>
     <script>
-      loadproduct(0,2);
+      loadproduct(0,2, "undefined", "");
       loadkatogorien(1);
       user();
     </script>

@@ -1,7 +1,7 @@
 window.onload = () => {
 }
 
-      function loadproduct(str,max, q){
+      function loadproduct(str,max, q, suche){
         if(str >= 0 && str < max){
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function(){
@@ -11,7 +11,7 @@ window.onload = () => {
                     document.getElementById("output").innerHTML =this.statusText;
                 }
             };
-            xmlhttp.open("GET","PHP/loadproduct.php?str="+str+"&q="+q,true);
+            xmlhttp.open("GET","PHP/loadproduct.php?str="+str+"&q="+q+"&suche="+suche,true);
             xmlhttp.send();  
         }
         
@@ -40,18 +40,6 @@ window.onload = () => {
                 xmlhttp.open("GET","PHP/login.php",true);
                 xmlhttp.send();
       }
-      function loadproductkat(kat){
-        var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function(){
-                    if(this.readyState ==4 && this.status==200){
-                        document.getElementById("output").innerHTML =this.responseText;
-                    }else{ 
-                        document.getElementById("output").innerHTML =this.statusText;
-                    }
-                };
-                xmlhttp.open("GET","PHP/loadproductkat.php?q=" + kat,true);
-                xmlhttp.send();
-      }
       function show(str){
         var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function(){
@@ -76,7 +64,7 @@ window.onload = () => {
                         txt = document.getElementById("error").innerText;
                         if(txt == "Angemeldet"){
                             user();
-                            loadproduct();
+                            loadproduct(0,2);
                         }
                     }else{ 
                         document.getElementById("error").innerHTML =this.statusText;
@@ -277,7 +265,7 @@ window.onload = () => {
                     if(this.readyState ==4 && this.status==200){
                         document.getElementById("output").innerHTML =this.responseText;
                         user();
-                        loadproduct()
+                        loadproduct(0,2);
                     }else{ 
                         document.getElementById("output").innerHTML =this.statusText;
                     }

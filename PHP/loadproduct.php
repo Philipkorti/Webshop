@@ -14,6 +14,8 @@
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
   <div class="carousel-indicators">
     <?php
+    $suche = $_GET['suche'];
+    $suche = strtolower($suche);
     $value = $_GET['str'];
     $kat = $_GET['q'];
     $mysqli = new mysqli("db", "root", "example", "WebShop");
@@ -72,20 +74,30 @@
           $bilder[] = $data;
         }
       }
+      $productcount = 0;
+          foreach($posts as $post){
+            if(startsWith(strtolower($post->Name), $suche)) {
+              $productcount++;
+            }
+          }
+          
       if(isset($posts)){
         $start = 9 * $value;
           if($value == 0){
             $end = 9;
-            if($end > count($posts)){
-              $end =  count($posts);
+            if($end > $productcount ){
+              $end =  $productcount ;
             }
           }else{
             $end = 9 * ($value+1);
-            if($end > count($posts)){
-              $end =  count($posts);
+            if($end > $productcount ){
+              $end =  $productcount ;
             }
           }
+          }
+          
             for($i = $start; $i < $end; $i++){
+              if(startsWith(strtolower($posts[$i]->Name), $suche)) {
                 echo "
           <div class='col-lg-4 col-md-3' style='margin-top: 10px'>
               <div class='card'>";
@@ -97,28 +109,37 @@
                   </div>
               </div>
           </div>";
+              }
       }
-          }
             
     $prev = $value -1;
     $next = $value + 1;
     $max = count($posts) / 9;
-    echo "<nav aria-label='Page navigation example'>
+
+    if($productcount != 0){
+      echo "<nav aria-label='Page navigation example'>
   <ul class='pagination justify-content-center mt-3'>
-  <li class='page-item'><a class='page-link' href='#' onclick='loadproduct($prev, $max)'>Prev</a></li>
+  <li class='page-item'><a class='page-link' href='#' onclick='loadproduct($prev, $max, $kat, \"$suche\")'>Prev</a></li>
   ";
-  for ($i=0; $i < count($posts) / 9; $i++) {
+  for ($i=0; $i < $productcount/ 9; $i++) {
     $count = $i +1;
     if($i == $value){
-      echo "<li class='page-item'><a class='page-link active' href='#' onclick='loadproduct($i, $max)'>".$count."</a></li>";
+      echo "<li class='page-item'><a class='page-link active' href='#' onclick='loadproduct($i, $max, $kat, \"$suche\")'>".$count."</a></li>";
     }else{
-      echo "<li class='page-item'><a class='page-link' href='#' onclick='loadproduct($i, $max)'>".$count."</a></li>";
+      echo "<li class='page-item'><a class='page-link' href='#' onclick='loadproduct($i, $max, $kat, \"$suche\")'>".$count."</a></li>";
       
     }
   }
-  echo "<li class='page-item'><a class='page-link' href='#' onclick='loadproduct($next, $max)'>Next</a></li>
+  echo "<li class='page-item'><a class='page-link' href='#' onclick='loadproduct($next, $max, $kat, \"$suche\")'>Next</a></li>
   </ul>
   </nav>";
+    }
+    
+
+  function startsWith( $haystack, $needle ) {
+    $length = strlen( $needle );
+    return substr( $haystack, 0, $length ) === $needle;
+}
     ?>
     </div>
 
