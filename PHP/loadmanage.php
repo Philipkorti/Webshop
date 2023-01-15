@@ -40,7 +40,6 @@ if($option == 'Produkte'){
           <th class='text-center'>Beschreibung</th>
           <th>Katogorie</th>
           <th></th>
-          <th></th>
           </tr>";
 for($i = $start; $i < $end; $i++){
     if(startsWith(strtolower($posts[$i]->Name), $suche)) {
@@ -51,7 +50,6 @@ for($i = $start; $i < $end; $i++){
     <td>".$posts[$i]->description."</td>
     <td>".$posts[$i]->category."</td>
     <td><a href='./editproducts.php?p=".$posts[$i]->id."' role='batten' class='btn btn-primary'>Manage</a></td>
-    <td></td>
     </tr>";
     }
 }

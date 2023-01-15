@@ -17,11 +17,11 @@ if(isset($_SESSION['userid']) || isset($_COOKIE['user'])){
         }
     }
     echo "<a class='dropdown-item' href='#' onclick='showorders()'>Bestellungen</a>
-    <a class='dropdown-item' href='#' onclick='logout()'>Logout</a>
+    <a class='dropdown-item' href='#' onclick='logout()'>Abmelden</a>
     ";
     
 }else{
-    echo "<a class='dropdown-item' href='#' onclick='login()'>Login</a>";
+    echo "<a class='dropdown-item' href='#' onclick='login()'>Anmelden</a>";
 }
 
 ?>

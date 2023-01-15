@@ -31,7 +31,6 @@ foreach($posts as $post) {
       <span class='input-group-text'>Beschreibung</span>
       <textarea class='form-control' id='beschreibung' Name='beschreibung' aria-label='With textarea'>$post->description</textarea>
     </div>
-<input type='file' class='form-control' id='photos' name='photos[]' multiple>
 <button type='submit' id='upload-btn' class='btn btn-success mt-5 col-lg-5 me-5 ms-5'>Speichern</button>
 <a href='./manageproducts.php' role='button' class='btn btn-danger mt-5 col-lg-5 ms-5'>Exit</a>
 </form>

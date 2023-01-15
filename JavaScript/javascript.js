@@ -64,7 +64,7 @@ window.onload = () => {
                         txt = document.getElementById("error").innerText;
                         if(txt == "Angemeldet"){
                             user();
-                            loadproduct(0,2);
+                            loadproduct(0,2, "undefined", "");
                         }
                     }else{ 
                         document.getElementById("error").innerHTML =this.statusText;

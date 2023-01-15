@@ -28,7 +28,7 @@
         </div>
         <div class="col-lg-12 mt-3">
             <label for="address2">Adresse 2</label>
-            <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
+            <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, oder Stiegenhaus">
         </div>
         <div class="row mt-3">
             <div class="col-md-6">
@@ -48,7 +48,7 @@
                 <input type="text" class="form-control" id="plz">
             </div>
         </div>
-        <button type="submit" class="btn btn-success col-lg-12 mt-3">SignIn</a>
+        <button type="submit" class="btn btn-success col-lg-12 mt-3">Registrieren</a>
         <script src="./JavaScript/javascript.js"></script>
     </form>
 </div>

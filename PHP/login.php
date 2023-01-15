@@ -18,8 +18,8 @@
                             </div>
                             <div id="error" class="ms-2 me-2"></div>
                             <div class="card-footer text-center">
-                                <a role="button" onclick="admin()" class="btn btn-warning">Login</a>
-                                <a role="button" onclick="signIn()" class="btn btn-warning">SignIn</a>
+                                <a role="button" onclick="admin()" class="btn btn-warning">Anmelden</a>
+                                <a role="button" onclick="signIn()" class="btn btn-warning">Registrieren</a>
                             </div>
                         </form>
                     </div>
