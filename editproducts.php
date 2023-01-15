@@ -35,6 +35,8 @@ foreach($posts as $post) {
 <button type='submit' id='upload-btn' class='btn btn-success mt-5 col-lg-5 me-5 ms-5'>Speichern</button>
 <a href='./manageproducts.php' role='button' class='btn btn-danger mt-5 col-lg-5 ms-5'>Exit</a>
 </form>
+<a href='#' class='btn btn-danger col-lg-12' role='button' onclick='deleteproduct($post->id)'>Delete</a>
+<p id='result'></p>
 ";
   }
 }

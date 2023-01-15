@@ -10,20 +10,20 @@
     <title>Document</title>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #91E0FF;" id="navbar-backgroundid" aria-label="Third navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Juwelier Huemer</a>
+          <a class="navbar-brand text-black" href="index.html">Juwelier Huemer</a>
+          <div class="col-lg-6 col-ms-2 ms-3">
+          <form role="search">
+              <input class="form-control" type="search" onkeyup="manage(0,2, this.value)" placeholder="Search">
+            </form>
+          </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-    
           <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Zum Shop</a>
               </li>
             </ul>
-            <form role="search">
-              <input class="form-control" type="search" onkeyup="showHint(this.value)" placeholder="Search">
-            </form>
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link" data-bs-toggle="dropdown" ria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" style="margin: 10" class="bi bi-person-circle" viewBox="0 0 16 16">

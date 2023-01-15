@@ -318,3 +318,29 @@ window.onload = () => {
                   xmlhttp.open("GET","PHP/ads.php",true);
                   xmlhttp.send();
       }
+      function manage(str, max, search){
+        if(str >= 0 && str < max){
+        var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.onreadystatechange = function(){
+                      if(this.readyState ==4 && this.status==200){
+                          document.getElementById("outputmanage").innerHTML = this.responseText;
+                      }else{ 
+                          document.getElementById("outputmanage").innerHTML =this.statusText;
+                      }
+                  };
+                  xmlhttp.open("GET","PHP/loadmanage.php?str="+str+"&search="+search,true);
+                  xmlhttp.send();
+                }
+      }
+      function deleteproduct(id){
+        var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.onreadystatechange = function(){
+                      if(this.readyState ==4 && this.status==200){
+                          document.getElementById("result").innerHTML = this.responseText;
+                      }else{ 
+                          document.getElementById("result").innerHTML =this.statusText;
+                      }
+                  };
+                  xmlhttp.open("GET","PHP/deleteproduct.php?pid="+id,true);
+                  xmlhttp.send();
+      }

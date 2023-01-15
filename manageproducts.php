@@ -1,36 +1,29 @@
 <?php
 include "./header.php";
-echo "<div class='container'>
-<table class='table table-borderless'>
-<tr>
-<th>Produkt Name</th>
-<th>Stück</th>
-<th>Preis</th>
-<th class='text-center'>Beschreibung</th>
-<th>Katogorie</th>
-<th></th>
-<th></th>
-</tr>";
-$mysqli = new mysqli("db", "root", "example", "WebShop");
-$sql = "SELECT * FROM Produkte";
-if ($result = $mysqli->query($sql)) {
-    while ($data = $result->fetch_object()) {
-        $posts[] = $data;
-    }
-}
+echo "<body>
+<div class='container' id='outputmanage'>
+</div>
+</body>
+";
 
-foreach($posts as $post) {
-    echo "<tr>
-    <td>".$post->Name."</td>
-    <td>".$post->inStock."</td>
-    <td>".$post->price."</td>
-    <td>".$post->description."</td>
-    <td>".$post->category."</td>
-    <td><a href='./editproducts.php?p=".$post->id."' role='batten' class='btn btn-primary'>Manage</a></td>
-    <td></td>
-    </tr>";
-}
-echo"</table>
-<a href='./addProduct.php' class='btn btn-success col-lg-12'>Neues Produkt</a>
-</div>"
 ?>
+ <div>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2021 Juwelier Huemer, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+      </footer>
+    </div>
+    <script>
+    manage(0,2,"");
+</script>
