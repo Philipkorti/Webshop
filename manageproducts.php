@@ -1,11 +1,14 @@
 <?php
 include "./header.php";
 echo "<body>
+<select class='form-select' id='optionload' onchange='manage(0,2,\"\");''  aria-label='Default select example'>
+  <option selected>Produkte</option>
+  <option>Katogorien</option>
+</select>
 <div class='container' id='outputmanage'>
 </div>
 </body>
 ";
-
 ?>
  <div>
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

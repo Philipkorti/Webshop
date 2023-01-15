@@ -265,7 +265,7 @@ window.onload = () => {
                     if(this.readyState ==4 && this.status==200){
                         document.getElementById("output").innerHTML =this.responseText;
                         user();
-                        loadproduct(0,2);
+                        loadproduct(0,2, "undefined", "");
                     }else{ 
                         document.getElementById("output").innerHTML =this.statusText;
                     }
@@ -319,6 +319,7 @@ window.onload = () => {
                   xmlhttp.send();
       }
       function manage(str, max, search){
+        optionload = document.getElementById('optionload').value;
         if(str >= 0 && str < max){
         var xmlhttp = new XMLHttpRequest();
                   xmlhttp.onreadystatechange = function(){
@@ -328,7 +329,7 @@ window.onload = () => {
                           document.getElementById("outputmanage").innerHTML =this.statusText;
                       }
                   };
-                  xmlhttp.open("GET","PHP/loadmanage.php?str="+str+"&search="+search,true);
+                  xmlhttp.open("GET","PHP/loadmanage.php?str="+str+"&search="+search+"&option="+optionload,true);
                   xmlhttp.send();
                 }
       }
@@ -342,5 +343,21 @@ window.onload = () => {
                       }
                   };
                   xmlhttp.open("GET","PHP/deleteproduct.php?pid="+id,true);
+                  xmlhttp.send();
+      }
+      function deletekat(kat){
+        var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.onreadystatechange = function(){
+                      if(this.readyState ==4 && this.status==200){
+                          document.getElementById("result").innerHTML = this.responseText;
+                          result = document.getElementById("output");
+                          if(result != "Die Katogorie $kat wurde erfolgreich gelöscht!"){
+                            manage(0,2,"");
+                          }
+                      }else{ 
+                          document.getElementById("result").innerHTML =this.statusText;
+                      }
+                  };
+                  xmlhttp.open("GET","PHP/deletkat.php?kat="+kat,true);
                   xmlhttp.send();
       }

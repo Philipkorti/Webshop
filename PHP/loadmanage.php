@@ -1,6 +1,7 @@
 <?php
  $value = $_GET['str'];
  $suche = $_GET['search'];
+ $option = $_GET['option'];
  $suche = strtolower($suche);
 $mysqli = new mysqli("db", "root", "example", "WebShop");
 $sql = "SELECT * FROM Produkte";
@@ -9,7 +10,8 @@ if ($result = $mysqli->query($sql)) {
         $posts[] = $data;
     }
 }
-$productcount = 0;
+if($option == 'Produkte'){
+    $productcount = 0;
           foreach($posts as $post){
             if(startsWith(strtolower($post->Name), $suche)) {
               $productcount++;
@@ -76,8 +78,34 @@ echo "<li class='page-item'><a class='page-link' href='#' onclick='manage($next,
 </ul>
 </nav>";
   }
-  function startsWith( $haystack, $needle ) {
+}else{
+    $sql = "SELECT * FROM Katogorien";
+    if ($result = $mysqli->query($sql)) {
+        while ($data = $result->fetch_object()) {
+            $kats[] = $data;
+        }
+    }
+    echo "<table class='table table-borderless'>
+    <tr>
+    <th>Katogorien</th>
+    <th></th>
+    </tr>
+    ";
+    foreach($kats as $kat){
+        if(startsWith(strtolower($kat->Katogorien), $suche)) {
+            echo "<tr>
+            <td>$kat->Katogorien</td>
+            <td><a role='button' class='btn btn-danger' onclick='deletekat(\"$kat->Katogorien\")'>Delete</a></td>
+            </tr>";
+        }
+    }
+    
+    echo"</table>";
+    echo "<div id='result'></div>";
+}
+function startsWith( $haystack, $needle ) {
     $length = strlen( $needle );
     return substr( $haystack, 0, $length ) === $needle;
 }
+
 ?>
