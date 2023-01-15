@@ -1,7 +1,7 @@
 <?php
 include "./header.php";
 echo "<body>
-<select class='form-select' id='optionload' onchange='manage(0,2,\"\");''  aria-label='Default select example'>
+<select class='form-select' id='optionload' onchange='manage(0,2,\"\");''  aria-label='Select option'>
   <option selected>Produkte</option>
   <option>Katogorien</option>
 </select>

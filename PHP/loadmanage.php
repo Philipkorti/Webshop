@@ -49,7 +49,7 @@ for($i = $start; $i < $end; $i++){
     <td>".$posts[$i]->price."</td>
     <td>".$posts[$i]->description."</td>
     <td>".$posts[$i]->category."</td>
-    <td><a href='./editproducts.php?p=".$posts[$i]->id."' role='batten' class='btn btn-primary'>Manage</a></td>
+    <td><a href='./editproducts.php?p=".$posts[$i]->id."' role='batten' class='btn btn-primary'>Bearbeiten</a></td>
     </tr>";
     }
 }

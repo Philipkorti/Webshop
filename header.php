@@ -13,7 +13,7 @@
           <a class="navbar-brand text-black" href="index.html">Juwelier Huemer</a>
           <div class="col-lg-6 col-ms-2 ms-3">
           <form role="search">
-              <input class="form-control" type="search" onkeyup="manage(0,2, this.value)" placeholder="Search">
+              <input class="form-control" type="search" onkeyup="manage(0,2, this.value)" placeholder="Suche">
             </form>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="true" aria-label="Toggle navigation">
